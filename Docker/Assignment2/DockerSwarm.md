@@ -16,6 +16,9 @@ list docker services:
 
 Rolling update and service scaling:
 
+<img width="947" alt="{F22AF5F1-65A6-4404-8DA6-BBAB467A584A}" src="https://github.com/user-attachments/assets/2dcbaa8f-0858-4026-8362-4a6cdd160af8" />
+
+
 
 
 
