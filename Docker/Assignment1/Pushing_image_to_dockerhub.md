@@ -2,4 +2,7 @@ Pushing the image to docker Hub
 1. Docker login : docker login
 2. Build Docker Image: docker build -t sindhiya1930/skillfyme-java-microservice:latest .
 3. Push image to Docker Hub: docker push sindhiya1930/skillfyme-java-microservice:latest
+   ![image](https://github.com/user-attachments/assets/d02831ef-88e8-4732-9760-edd0a61b9848)
+
+
 
