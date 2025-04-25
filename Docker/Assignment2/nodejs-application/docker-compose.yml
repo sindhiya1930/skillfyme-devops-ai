@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  web:
+    image: node-web-app:latest
+    build: .
+    ports:
+      - "80:3000"
+    networks:
+      - app-network
+    deploy:
+      replicas: 3
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+  api:
+    image: node-web-app:latest
+    build: .
+    networks:
+      - app-network
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+
+  db:
+    image: mongo:6.0
+    volumes:
+      - db-data:/data/db
+    networks:
+       app-network
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+
+networks:
+  app-network:
+    driver: overlay
+
+volumes:
+  db-data
+    
+  
