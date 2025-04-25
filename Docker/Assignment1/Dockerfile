@@ -7,7 +7,7 @@ RUN mvn clea package -DskipTests
 
 FROM eclipse-temurin:17-jre
 WORKDIR /app
-COPY -from=builder /app/target/*.jar aap.jar
+COPY -from=builder /app/target/*.jar app.jar
 RUN adduser --system --group appuser
 USER appuser
 EXPOSE 8080
