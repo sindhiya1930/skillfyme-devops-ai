@@ -1,5 +1,5 @@
 resource "aws_vpc" "main" {
-cidr_block = "10.${terraform.workspace == "prod" ? 2 : terraform.workspace == "staging" ? 1 : 0}.0.0/16"
+cidr_block = var.cidr_block
 enable_dns_support = true
 enable_dns_hostnames = true
 
@@ -10,7 +10,7 @@ Name = "vpc-${terraform.workspace}"
 
 resource "aws_subnet" "subnet" {
 vpc_id = aws_vpc.main.id
-cidr_block = "10.${terraform.workspace == "prod" ? 2 : terraform.workspace == "staging" ? 1 : 0}.1.0/24"
+cidr_block = var.subnet_cidr
 availability_zone = "${var.aws_region}a"
 
 tags = merge(local.common_tags, {
