@@ -1,24 +1,29 @@
-**Terraform structure**
+**Terraform Workspace**
 
-<img width="475" alt="image" src="https://github.com/user-attachments/assets/a13f8696-c6e1-4488-ba0d-5763420e41b8" />
+***dataset***
+1.three workspaces
+2.environment specific *.auto.tfvars
 
-**Terraform init**
+****Tasks****
+***initialise workspaces***
 
-<img width="623" alt="image" src="https://github.com/user-attachments/assets/b4e3c306-6f21-420c-beda-e3492e287da5" />
+<img width="614" alt="image" src="https://github.com/user-attachments/assets/a8fdd749-8d13-4efe-ae84-a0dbd7a40fe9" />
 
-**Terraform workspace new dev**
+***Tagging***
 
-<img width="590" alt="image" src="https://github.com/user-attachments/assets/9998a358-0f41-4b2f-882b-fc3580a361dc" />
+***dev***
 
-**terraform plan -var-file=dev.auto.tfvars -auto-approve**
+<img width="740" alt="image" src="https://github.com/user-attachments/assets/c4b59b35-9a50-435d-a89e-7ed409ea77dc" />
 
-<img width="633" alt="image" src="https://github.com/user-attachments/assets/bb35c460-21e6-4028-9408-e7c5b9d612be" />
+***staging***
 
-**dev vpc created**
-<img width="548" alt="image" src="https://github.com/user-attachments/assets/eff0066a-8a8d-48d9-a45c-982bc62da47f" />
+<img width="440" alt="image" src="https://github.com/user-attachments/assets/0ab756f2-f125-4887-ba20-8fb293b3636e" />
+
+***prod***
+
+<img width="522" alt="image" src="https://github.com/user-attachments/assets/63086d17-05ea-4ebb-9e7b-22321318f583" />
 
 
+***deploy infra***
 
-
-
-
+<img width="761" alt="image" src="https://github.com/user-attachments/assets/c6e74a4b-6671-458e-9c79-7b8634774394" />
