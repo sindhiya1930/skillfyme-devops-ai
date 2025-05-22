@@ -21,6 +21,8 @@ Instance -> Instance name -> Security -> Security group -> add rule
 
 Get jenkins password for : /var/jenkins_home/secrets/initialAdminPassword --> execute into docker container
 
+docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
 <img width="702" alt="image" src="https://github.com/user-attachments/assets/c6904909-e4eb-4088-be0b-f7e9b539b328" />
 
 Install plugins
