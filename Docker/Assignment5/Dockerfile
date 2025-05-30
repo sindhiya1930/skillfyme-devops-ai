@@ -1,27 +1,70 @@
 FROM jenkins/jenkins:lts
 
 USER root
+RUN groupadd -g 988 docker && \
+usermod -aG docker jenkins
 
-# Install dependencies
-RUN apt update \
-apt install apt-transport-https ca-certificates curl software-properties-common \
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - \
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" \
-apt-cache policy docker-ce \
-apt install docker-ce \
+# Install Docker CLI
+RUN apt-get update && \
+apt-get install -y \
+ca-certificates curl gnupg lsb-release gnupg2 software-properties-common && \
+mkdir -p /etc/apt/keyrings && \
+curl -fsSL https://download.docker.com/linux/debian/gpg | \
+gpg --dearmor -o /etc/apt/keyrings/docker.gpg && \
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] \
+https://download.docker.com/linux/debian $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list && \
+apt-get update && \
+apt-get install -y docker-ce-cli
 
-# Install kubectl
-RUN curl -LO "https://dl.k8s.io/release/$(curl -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
-install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl && \
-rm kubectl
+
+ENV NODE_VERSION=16.13.0
+RUN apt install -y curl
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+ENV NVM_DIR=/root/.nvm
+RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
+ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+RUN node --version
+RUN npm --version
 
 # Install AWS CLI v2
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
-unzip awscliv2.zip && \
-./aws/install && \
-rm -rf aws awscliv2.zip
+apt-get install -y unzip && \
+unzip awscliv2.zip && ./aws/install && rm -rf awscliv2.zip aws
+root@ip-172-31-90-15:~# vi Dockerfile 
+root@ip-172-31-90-15:~# cat Dockerfile 
+FROM jenkins/jenkins:lts
 
-# Allow Jenkins user to access Docker
-RUN usermod -aG docker jenkins
+USER root
+RUN groupadd -g 988 docker && \
+usermod -aG docker jenkins
 
-USER jenkins
+# Install Docker CLI
+RUN apt-get update && \
+apt-get install -y \
+ca-certificates curl gnupg lsb-release gnupg2 software-properties-common && \
+mkdir -p /etc/apt/keyrings && \
+curl -fsSL https://download.docker.com/linux/debian/gpg | \
+gpg --dearmor -o /etc/apt/keyrings/docker.gpg && \
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] \
+https://download.docker.com/linux/debian $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list && \
+apt-get update && \
+apt-get install -y docker-ce-cli
+
+
+ENV NODE_VERSION=16.13.0
+RUN apt install -y curl
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+ENV NVM_DIR=/root/.nvm
+RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
+ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+RUN node --version
+RUN npm --version
+
+# Install AWS CLI v2
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+apt-get install -y unzip && \
+unzip awscliv2.zip && ./aws/install && rm -rf awscliv2.zip aws
