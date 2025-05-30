@@ -30,8 +30,8 @@ spec:
         app: my-app
     spec:
       containers:
-      - name: codecatalyst-eks-container
+      - name: default/demo
         # The $REPOSITORY_URI and $IMAGE_TAG placeholders will be replaced by actual values supplied by the build action in your workflow
-        image: $REPOSITORY_URI:$IMAGE_TAG
+        image: 248167063816.dkr.ecr.us-east-1.amazonaws.com/default/demo:latest
         ports:
         - containerPort: 80
