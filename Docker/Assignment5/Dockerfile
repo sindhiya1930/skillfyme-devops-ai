@@ -3,24 +3,12 @@ FROM jenkins/jenkins:lts
 USER root
 
 # Install dependencies
-RUN apt-get update && apt-get install -y \
-curl \
-unzip \
-python3 \
-python3-pip \
-apt-transport-https \
-ca-certificates \
-gnupg \
-software-properties-common \
-lsb-release
-
-# Install Docker CLI
-RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
-add-apt-repository \
-"deb [arch=amd64] https://download.docker.com/linux/debian \
-$(lsb_release -cs) \
-stable" && \
-apt-get update && apt-get install -y docker-ce-cli
+RUN apt update \
+apt install apt-transport-https ca-certificates curl software-properties-common \
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - \
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" \
+apt-cache policy docker-ce \
+apt install docker-ce \
 
 # Install kubectl
 RUN curl -LO "https://dl.k8s.io/release/$(curl -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
