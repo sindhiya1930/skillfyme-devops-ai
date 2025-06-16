@@ -1,4 +1,5 @@
 **INFRASTRUCTURE AS CODE IMPLEMENTATION USING TERRAFORM**  <br> <br>
+**Authentication Methodology** <br>
 **Creation of AWS IAM Credentials** <br>
 1.Sign in to the AWS Management Console using your AWS account credentials. <br>
 2.Open the IAM (Identity and Access Management) service from the console. <br>
