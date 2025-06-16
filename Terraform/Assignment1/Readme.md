@@ -30,6 +30,8 @@ Rotate access keys regularly.  <br>
 **Configure AWS Cli - Authentication Methodology**  <br>
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/6786fabb-66df-400e-8866-0546342ef6eb" />
 
+S3/Dynamod DB creation
+aws s3 mb s3://your-terraform-state-bucket --region us-east-1
 **Deployment steps** <br>
 1.terraform init <br>
 <img width="809" alt="image" src="https://github.com/user-attachments/assets/1a344cda-1e33-4b83-8891-0736b2a82346" />
