@@ -45,6 +45,15 @@ aws s3 mb s3://your-terraform-state-bucket --region us-east-1
 **AWS Console EC2 Verification** <br>
 <img width="749" alt="image" src="https://github.com/user-attachments/assets/aa4ae681-e998-435f-a124-8a84a0261c7b" />
 
+**AWS Console S3 Verification**<br>
+<img width="916" alt="{3E088E96-B8F6-494F-A2E0-D0D4C7A3C756}" src="https://github.com/user-attachments/assets/d34c660b-cd5e-447a-9274-e5a7880bee71" />
+
+**State file in S3**<br>
+<img width="744" alt="{662818B0-D41A-4238-9556-1D9327F047F3}" src="https://github.com/user-attachments/assets/6f1f801a-947b-4b55-ab01-3a218a053ecb" />
+
+**Security Group Validation in AWS** <br>
+<img width="760" alt="{B9189033-2988-4FB1-B95D-6C421E3A6746}" src="https://github.com/user-attachments/assets/56009f67-0d4c-4736-8cf3-89aec4e64b61" />
+
 **Terraform destroy** <br>
 1.terraform destroy <br>
 <img width="719" alt="image" src="https://github.com/user-attachments/assets/8ad85564-4fe6-4d0a-a2e1-3473d0717316" />
