@@ -87,13 +87,13 @@ Terraform and the AWS CLI will need AWS credentials to interact with your accoun
 **Crucial:** The S3 bucket and DynamoDB table for the backend must exist *before* you run `terraform init` with the `backend` configuration.
 
 1.  **Set `terraform_state_bucket_name` variable:**
-    Edit `variables.tf` and provide a **globally unique name** for `terraform_state_bucket_name`. Example: `yourname-skillfyme-tf-state-20250616`.
+    Edit `variables.tf` and provide a **globally unique name** for `terraform_state_bucket_name`. Example: `anglo-terraform-state-backend-skillfy`.
     Also, ensure the `bucket` value in `backend.tf` matches this unique name.
 
 2.  **Create S3 Bucket:**
     ```bash
     aws s3 mb s3://<your-unique-skillfyme-tf-state-bucket> --region <your-aws-region>
-    # Example: aws s3 mb s3://mycompany-skillfyme-tf-state-20250616 --region us-east-1
+    # Example: aws s3 mb s3://anglo-terraform-state-backend-skillfy --region eu-west-3
     ```
     *Note: If `object_lock_enabled` is uncommented in `s3-bucket.tf`, you must create the bucket with `--object-lock-enabled` via CLI or console at this step.*
 
@@ -104,27 +104,22 @@ Terraform and the AWS CLI will need AWS credentials to interact with your accoun
       --attribute-definitions AttributeName=LockID,AttributeType=S \
       --key-schema AttributeName=LockID,KeyType=HASH \
       --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
-      --region <your-aws-region> \
+      --region eu-west-3 \
       --tags Key=Name,Value=terraform-state-lock Key=Environment,Value=backend Key=ManagedBy,Value=TerraformAssignment
-    # Example: aws dynamodb create-table --table-name terraform-state-lock --attribute-definitions AttributeName=LockID,AttributeType=S --key-schema AttributeName=LockID,KeyType=HASH --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 --region us-east-1 --tags Key=Name,Value=terraform-state-lock Key=Environment,Value=backend Key=ManagedBy,Value=TerraformAssignment
     ```
 
 #### Terraform Initialization
 
-Terraform init
+1. Terraform init /
 <img width="713" alt="image" src="https://github.com/user-attachments/assets/54cb7ac9-147e-493f-baaf-0864be7beb37" />
-
-terraform plan
-terraform apply
+2. terraform plan /
+3. terraform apply /
 <img width="756" alt="image" src="https://github.com/user-attachments/assets/dca0e447-6c15-4007-b3e9-b7eae83c6d9b" />
-
-S3 in AWS
+4. S3 in AWS /
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/6a62bd21-5cef-4207-b9d6-b28605d4f269" />
-
-dynamodb 
+5. dynamodb /
 <img width="737" alt="image" src="https://github.com/user-attachments/assets/cf6a09f9-d103-436f-a022-ec003dcfddf6" />
-
-uncommenting the backend block to make terraform use the s3 bucket
+6. uncommenting the backend block to make terraform use the s3 bucket /
 <img width="649" alt="image" src="https://github.com/user-attachments/assets/0f5b5b80-8c5e-4fbf-817c-9ab1aaacf8c3" />
 
 
