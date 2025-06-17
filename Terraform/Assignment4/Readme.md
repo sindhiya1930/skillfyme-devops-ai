@@ -73,12 +73,10 @@ This approach ensures that security group configurations are standardized, maint
 2.  **Define Variables:**
     * Open `security_rules.tfvars` (or `security_rules.tfvars.example` and rename it).
     * Update `allowed_ports` with the list of ports allowed by BSS-2024-01 Section 3.2.
-    * Provide your `vpc_id`.
 
     ```terraform
     # security_rules.tfvars
     allowed_ports = [80, 443, 22] # XYZ's approved ports
-    vpc_id        = "vpc-0abcdef1234567890"
     ```
 
 3.  **Add validation for `allowed_ports` in `variables.tf` (if not already present):**
