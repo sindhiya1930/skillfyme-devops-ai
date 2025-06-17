@@ -41,6 +41,6 @@ networks:
     driver: overlay
 
 volumes:
-  - db-data
+  db-data: {}
     
   
