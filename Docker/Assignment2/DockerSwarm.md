@@ -98,9 +98,6 @@ Services: In Docker Swarm, a "service" is the definition of the tasks to be exec
 2. Verify Swarm Status:
 
 <img width="913" alt="image" src="https://github.com/user-attachments/assets/996421f6-9b0c-4a8c-9dd4-4ceb36be9faf" />
-
-
-3. Configure Services in docker-compose.yml
    
 ### Task 3: Deploy the services using Docker Compose and Swarm mode
 **Goal**: To deploy your defined services as a stack on the Docker Swarm cluster.
@@ -133,7 +130,7 @@ You should see your web, api, and mongodb services running.
 
 **Steps**:
 
-This was already implicitly covered in Task 2 and 3 by defining app_network with driver: overlay in docker-compose.yml and attaching all services to it.
+This was already implicitly covered in Task 2 and 3 by defining app-network with driver: overlay in docker-compose.yml and attaching all services to it.
 Verification: You can verify the network creation:
 > docker network ls
 
