@@ -117,11 +117,16 @@ Navigate to the directory containing your docker-compose.yml file on the Swarm m
 Check the deployed services:
 
 >docker stack services myapp
+
 > docker service ls
 
 You should see your web, api, and mongodb services running.
 
 <img width="950" alt="{C22CA134-EE87-44EE-AACA-D951D6944CEF}" src="https://github.com/user-attachments/assets/6125e3bf-fa59-4d84-a759-443e2e855b9a" />
+
+> docker service logs mystack_db
+   <img width="943" alt="{9864AD6C-42FC-42D8-AA2E-44FE60ACD51E}" src="https://github.com/user-attachments/assets/30b193dc-dd7b-4534-95fc-486649b3cb4a" />
+
 
 ### Task 4: Configure overlay networks to enable communication between services
 **Goal**: To ensure that your services can communicate with each other across different nodes in the Swarm.
@@ -133,10 +138,12 @@ You should see your web, api, and mongodb services running.
 This was already implicitly covered in Task 2 and 3 by defining app-network with driver: overlay in docker-compose.yml and attaching all services to it.
 Verification: You can verify the network creation:
 > docker network ls
+<img width="633" alt="{573A85DF-AC5F-4191-9C2B-5C14A1D740EA}" src="https://github.com/user-attachments/assets/cd4ef2f2-65c8-4227-ac59-95217c368ea0" />
 
-You should see myapp_app_network (or similar, based on your stack name and network name). You can also inspect the network:
+You should see mystack_app_network (or similar, based on your stack name and network name). You can also inspect the network:
 
-> docker network inspect myapp_app_network
+> docker network inspect mystack_app_network
+<img width="771" alt="{7B4C888F-5272-4C59-8CF0-EEED73CDD1FB}" src="https://github.com/user-attachments/assets/5c6b5b0f-5cdc-42fa-935f-e0431daf505b" />
 
 ### Task 5: Implement rolling updates and service scaling
 **Goal**: To demonstrate how Docker Swarm handles updates to services without downtime and how to dynamically adjust the number of service replicas.
@@ -155,15 +162,30 @@ If you're using DockerHub or a private registry, build the new image and push it
 
 * **Deploy the Update**:
 Redeploy the stack. Swarm will detect the image change and perform a rolling update.
-> docker stack deploy -c docker-compose.yml myapp
+> docker stack deploy -c docker-compose.yml mystack
 
-<img width="947" alt="{F22AF5F1-65A6-4404-8DA6-BBAB467A584A}" src="https://github.com/user-attachments/assets/2dcbaa8f-0858-4026-8362-4a6cdd160af8" />
+<img width="813" alt="{8BCA03AE-03E1-462F-AC54-C536BEED997C}" src="https://github.com/user-attachments/assets/0a0e6aaa-64d7-4950-90f6-e9c26a3ce4eb" />
 
-* Rollback Strategy:
+* **Docker service logs to show version**:
+  <img width="919" alt="{520CA9BE-43B3-411A-AC4C-EBDE27A68FEF}" src="https://github.com/user-attachments/assets/f18f34d9-d6ce-4ec3-b407-9b6915b40e53" />
 
+* **Rollback Strategy**:
 Be prepared to roll back to a previous stable version in case a new deployment introduces critical errors. Docker Swarm allows for easy rollback using 
 
-> docker service update --rollback <service_name>.
+> docker service update --rollback <service_name>
+
+**Steps for Scaling**:
+* **Scale a Service Up/Down**:
+You can scale a service using the docker service scale command:
+> docker service scale mystack_db=5 # Scale db service to 5 replicas
+
+<img width="716" alt="{23AD6232-C45B-4C86-AC1A-F19184B32909}" src="https://github.com/user-attachments/assets/e50986db-bd43-4721-bb15-c20387b8fecf" />
+
+* **Verify Scaling**:
+Check the number of running tasks for the scaled service:
+> docker service ps myapp_web
+
+You should see the number of replicas reflect your scaling command.
 
 ### 5. Deep Dive Question
 **How does Swarm mode handle node failures and ensure high availability?**
