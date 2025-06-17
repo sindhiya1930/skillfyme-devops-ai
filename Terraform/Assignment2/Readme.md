@@ -110,17 +110,16 @@ Terraform and the AWS CLI will need AWS credentials to interact with your accoun
 
 #### Terraform Initialization
 
-1. Terraform init
-   <img width="713" alt="image" src="https://github.com/user-attachments/assets/54cb7ac9-147e-493f-baaf-0864be7beb37" />
-3. terraform plan
-4. terraform apply
+1. Terraform init<br>
+   <img width="713" alt="image" src="https://github.com/user-attachments/assets/54cb7ac9-147e-493f-baaf-0864be7beb37" /> <br>
+2. Terraform plan <br>
+3. Terraform apply <br>
+   <img width="649" alt="image" src="https://github.com/user-attachments/assets/0f5b5b80-8c5e-4fbf-817c-9ab1aaacf8c3" /> <br>
+4. Validation of S# in AWS <br>
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/6a62bd21-5cef-4207-b9d6-b28605d4f269" /> <br>
+5. S3 in AWSalidation of Dynamo db <br>
+   <img width="737" alt="image" src="https://github.com/user-attachments/assets/cf6a09f9-d103-436f-a022-ec003dcfddf6" /> <br>
+6. terraform apply <br>
    <img width="756" alt="image" src="https://github.com/user-attachments/assets/dca0e447-6c15-4007-b3e9-b7eae83c6d9b" />
-6. Validation of S# in AWS
-   <img width="700" alt="image" src="https://github.com/user-attachments/assets/6a62bd21-5cef-4207-b9d6-b28605d4f269" />
-8. S3 in AWSalidation of Dynamo db
-   <img width="737" alt="image" src="https://github.com/user-attachments/assets/cf6a09f9-d103-436f-a022-ec003dcfddf6" />
-10. Make use of S3 bucket
-11. <img width="649" alt="image" src="https://github.com/user-attachments/assets/0f5b5b80-8c5e-4fbf-817c-9ab1aaacf8c3" />
-12. terraform apply /
 
 
