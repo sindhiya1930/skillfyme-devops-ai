@@ -30,7 +30,7 @@ services:
     volumes:
       - db-data:/data/db
     networks:
-       app-network
+      - app-network
     deploy:
       replicas: 2
       restart_policy:
