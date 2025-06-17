@@ -56,6 +56,30 @@ This section details each task and provides a clear explanation of the steps inv
 6.  Exposing the port the application listens on.
 7.  Defining the command to run the application.
 
+**Steps**
+* Docker Hub Login
+  > docker login -u sindhiya1930
+Paste the PAT token for login <br>
+  <img width="725" alt="{26308EEB-7821-4C04-8CD0-4B05E756C461}" src="https://github.com/user-attachments/assets/13c92f96-d1cd-4fa0-b949-764251dbadeb" />
+
+* Docker Build Image
+  > docker build -t sindhiya1930/node-web-app:latest .
+  
+  <img width="814" alt="{A0195BB0-22AC-4575-B4A0-A854D12D7CC5}" src="https://github.com/user-attachments/assets/c63f9a42-8689-48f6-bd18-acbb7a3cc200" />
+
+
+* Docker Images list
+  > docker images
+  <img width="598" alt="{A2F596D3-51EF-436C-ABB3-AEF2D23EC7C6}" src="https://github.com/user-attachments/assets/a6be63d5-bfc0-432f-8f36-a603bd03ed3e" />
+
+* Docker Push Image to Docker Hub
+  > docker push sindhiya1930/node-web-app:latest
+  <img width="786" alt="{4747C232-D62B-43BD-ADB8-3E5558605E8D}" src="https://github.com/user-attachments/assets/966859af-c7b3-4c2d-ab5e-d27037b69f92" />
+
+* Verifying Docker Hub for Image
+  <img width="537" alt="{96BAD211-2E20-4955-8B17-9CC2954B6664}" src="https://github.com/user-attachments/assets/437aafe7-858f-493e-a1cd-2ed70558baca" />
+
+
 ### Task 2: Set up Docker Swarm and configure at least three services (Web, API, Database)
 
 **Goal**: To initialize a Docker Swarm cluster and define the core services for your application.
@@ -169,7 +193,7 @@ Service Discovery:
 
 Swarm's built-in DNS-based service discovery allows services to find each other by name, regardless of which node they are running on. If a service's task moves to a different node due to a failure, other services can still resolve its name and connect to it.
 
-### DockerHub Links
+### DockerHub Links : https://hub.docker.com/repository/docker/sindhiya1930/node-web-app
 
 
 
