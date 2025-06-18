@@ -1,3 +1,17 @@
+# Assignment #5: Enterprise-Grade Environment Management with Terraform Workspace
+
+This repository contains the deliverables for Assignment #5, focusing on establishing enterprise-grade environment management practices using Terraform Workspaces. The assignment demonstrates the ability to manage multiple environments (e.g., development, staging, production) with distinct configurations, ensure compliance, and provide robust operational procedures.
+
+## Setup and Usage (Detailed Steps based on Tasks)
+
+1.  **Prerequisites:**
+    * Terraform installed (version X.Y.Z)
+    * AWS CLI configured with appropriate credentials
+    * An AWS S3 bucket for Terraform state backend
+    * An AWS DynamoDB table for state locking (highly recommended)
+    * (Optional) Terraform Cloud account configured if using TFC for state management and runs.
+
+
 **Terraform Workspace**
 
 ***dataset***
