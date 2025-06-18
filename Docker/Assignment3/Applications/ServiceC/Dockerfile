@@ -17,7 +17,7 @@ COPY . .
 RUN go build -o /service-c-app ./main.go
 
 # Use a minimal Alpine image for the final stage
-FROM alpine/git:latest
+FROM alpine:latest
 
 # Set the working directory to /app
 WORKDIR /app
