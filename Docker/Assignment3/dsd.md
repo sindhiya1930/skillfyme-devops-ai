@@ -31,11 +31,18 @@ docker images
 <img width="642" alt="{E665AA04-1737-4D9E-97F7-A5F73D3D6091}" src="https://github.com/user-attachments/assets/3fdd4f38-738e-4769-9690-ea4a5506cb73" />
 
 
+sokcer services 
+<img width="846" alt="{D2BE8BE0-FA68-45A7-BC68-0CD895BD2C8B}" src="https://github.com/user-attachments/assets/36118a55-14ef-4b21-9bce-d1d591091b35" />
+
+b: <img width="942" alt="{B2FD3C7C-8D50-4795-8634-ACA35BDE8E36}" src="https://github.com/user-attachments/assets/7e714292-ba9b-49dc-b967-78523f8f1240" />
+c: <img width="952" alt="{7CAE5979-4353-42AE-9DE5-E08A812FD96C}" src="https://github.com/user-attachments/assets/60745a42-26c9-45cb-89fa-dd91ad18652b" />
 
 
 
 docker deploy
 <img width="773" alt="{CEFE4B40-8DF5-4322-A34E-5B378F41A515}" src="https://github.com/user-attachments/assets/af9d1d9b-3774-4ac6-93ea-77072ee7d77f" />
+
+docke
 
 
 
