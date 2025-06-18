@@ -1,0 +1,66 @@
+version: '3.8'
+
+networks:
+  # Define the overlay network created earlier
+  my-calico-network:
+    external: true
+
+services:
+  service-a:
+    build: ./service-a
+    image: my-service-a:latest
+    container_name: service-a
+    ports:
+      - "8080:8080"
+    networks:
+      - my-calico-network
+    # Calico-specific labels for policy targeting
+    labels:
+      io.projectcalico.label.app: service-a
+      io.projectcalico.label.tier: backend
+    environment:
+      - SERVICE_NAME=Service-A
+      - PORT=8080
+    deploy:
+      replicas: 1
+      placement:
+        # Deploy on manager for simplicity or ensure it can go anywhere
+        constraints: [node.role == manager]
+
+  service-b:
+    build: ./service-b
+    image: my-service-b:latest
+    container_name: service-b
+    ports:
+      - "8081:8081"
+    networks:
+      - my-calico-network
+    # Calico-specific labels for policy targeting
+    labels:
+      io.projectcalico.label.app: service-b
+      io.projectcalico.label.tier: backend
+    environment:
+      - SERVICE_NAME=Service-B
+      - PORT=8081
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.role == manager] # Deploy on a worker
+
+  service-c:
+    build: ./service-c
+    image: my-service-c:latest
+    container_name: service-c
+    networks:
+      - my-calico-network
+    # Calico-specific labels for policy targeting
+    labels:
+      io.projectcalico.label.app: service-c
+      io.projectcalico.label.tier: client
+    environment:
+      - TARGET_A=service-a:8080
+      - TARGET_B=service-b:8081
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.role == manager] # Deploy on a worker
