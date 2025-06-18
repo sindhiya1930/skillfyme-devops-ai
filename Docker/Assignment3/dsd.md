@@ -121,4 +121,5 @@ Lightweight and Efficient: Go binaries are small and compiled statically, ideal 
 Concurrency: Go's built-in concurrency features are well-suited for network services.
 Simplicity: The services are kept simple to clearly demonstrate the core networking and policy concepts.
 This combination allows for a robust, scalable, and secure containerized environment with clear network segmentation based on application roles and requirements.
+
 ---
