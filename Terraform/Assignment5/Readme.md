@@ -12,6 +12,21 @@ This repository contains the deliverables for Assignment #5, focusing on establi
     * (Optional) Terraform Cloud account configured if using TFC for state management and runs.
 
 
+
+terraform init
+<img width="670" alt="{76F1B406-CCE1-4DA3-84AC-D7FEC16772D5}" src="https://github.com/user-attachments/assets/1ec9fb3e-a674-49be-9753-85752bfc721a" />
+<img width="670" alt="{76F1B406-CCE1-4DA3-84AC-D7FEC16772D5}" src="https://github.com/user-attachments/assets/1ec9fb3e-a674-49be-9753-85752bfc721a" />
+
+tf_workspace variale
+<img width="748" alt="{9037C450-8B1C-42B1-9D5A-B74C52D60DA8}" src="https://github.com/user-attachments/assets/1b0ffd1f-78ea-45e6-b5cd-31feabe9203c" />
+<img width="748" alt="{9037C450-8B1C-42B1-9D5A-B74C52D60DA8}" src="https://github.com/user-attachments/assets/1b0ffd1f-78ea-45e6-b5cd-31feabe9203c" />
+
+list
+<img width="723" alt="{4CF3C98A-BD49-42C0-AD2A-BA01ED6B7FEE}" src="https://github.com/user-attachments/assets/0ddc8894-f327-4587-a5ea-dfc7bf14d22b" />
+<img width="723" alt="{4CF3C98A-BD49-42C0-AD2A-BA01ED6B7FEE}" src="https://github.com/user-attachments/assets/0ddc8894-f327-4587-a5ea-dfc7bf14d22b" />
+
+
+
 **Terraform Workspace**
 
 ***dataset***
