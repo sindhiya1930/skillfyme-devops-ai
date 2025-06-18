@@ -39,12 +39,13 @@ func main() {
 		// Attempt to connect to Service B
 		resp, err = client.Get(fmt.Sprintf("http://%s/ping", targetB))
 		if err != nil {
+			log.Printf("ERROR: Could not reach %s: %v", targetB, err)
+
+		} else {
 			defer resp.Body.Close()
 			body, _ := io.ReadAll(resp.Body)
 			log.Printf("SUCCESS!: Response from %s (%d): %s", targetB, resp.StatusCode, string(body))
-		} else {
 
-			log.Printf("ERROR: Could not reach %s: %v", targetB, err)
 		}
 
 		time.Sleep(5 * time.Second) // Main delay
