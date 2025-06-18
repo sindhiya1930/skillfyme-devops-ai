@@ -1,0 +1,16 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: deny-service-c-to-a
+  namespace: default
+spec:
+  selector: app == 'service-a' # This policy applies to Service A (as the destination)
+  types:
+    - Ingress
+  ingress:
+    # Deny incoming connections from Service C
+    - action: Deny
+      source:
+        selector: app == 'service-c'
+      destination:
+        ports: [8080] # Deny access to Service A's port
