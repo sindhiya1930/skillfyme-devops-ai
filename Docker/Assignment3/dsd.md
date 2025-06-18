@@ -22,6 +22,18 @@ testinh etcd
 create network
 <img width="567" alt="{2333268B-8B21-478D-AEE0-D2A40E2301E8}" src="https://github.com/user-attachments/assets/2afafd9f-7d9f-4b47-8422-5cd4394e817b" />
 
+docker image creation
+service c <img width="943" alt="{07A57FFD-B138-4456-92ED-FAB0C420B689}" src="https://github.com/user-attachments/assets/a507cc59-50b3-4739-81ad-9e5535879a10" />
+service a <img width="831" alt="{7BBEBE1E-601A-460F-B42E-70E244042DF7}" src="https://github.com/user-attachments/assets/53c38d7d-f556-4c78-a083-add7f96d3fe1" />
+service b <img width="817" alt="{7026695F-D8DE-484F-9CEB-95FD58A8F355}" src="https://github.com/user-attachments/assets/fad7ccf2-c0fa-4d1e-ac41-aa9e6a0ae8be" />
+
+docker images
+<img width="642" alt="{E665AA04-1737-4D9E-97F7-A5F73D3D6091}" src="https://github.com/user-attachments/assets/3fdd4f38-738e-4769-9690-ea4a5506cb73" />
+
+
+
+
+
 docker deploy
 <img width="773" alt="{CEFE4B40-8DF5-4322-A34E-5B378F41A515}" src="https://github.com/user-attachments/assets/af9d1d9b-3774-4ac6-93ea-77072ee7d77f" />
 
