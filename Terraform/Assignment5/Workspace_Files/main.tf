@@ -10,9 +10,6 @@ terraform {
 
   cloud {
     organization = "Skillfyme"
-    workspaces {
-      name = terraform.workspace
-    }
   }
 }
 
