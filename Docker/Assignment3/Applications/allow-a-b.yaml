@@ -1,0 +1,23 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: allow-service-a-b
+  namespace: default # Docker Swarm services run in the default namespace from Calico's perspective
+spec:
+  selector: app == 'service-a' || app == 'service-b' # Selects pods with app=service-a OR app=service-b
+  types:
+    - Ingress
+    - Egress
+  ingress:
+    # Allow incoming connections from services with app=service-a or app=service-b
+    - action: Allow
+      source:
+        selector: app == 'service-a' || app == 'service-b'
+  egress:
+    # Allow outgoing connections to services with app=service-a or app=service-b
+    - action: Allow
+      destination:
+        selector: app == 'service-a' || app == 'service-b'
+    # Allow all other egress (e.g., to DNS, external IPs, etc.)
+    # In a real scenario, you'd want to be more restrictive here.
+    - action: Allow
