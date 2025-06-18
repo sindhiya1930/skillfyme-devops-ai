@@ -11,7 +11,7 @@ terraform {
   cloud {
     organization = "Skillfyme"
     workspaces {
-      name = ${terraform.workspace}
+      name = terraform.workspace
     }
   }
 }
