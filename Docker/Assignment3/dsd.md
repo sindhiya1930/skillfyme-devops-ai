@@ -22,5 +22,9 @@ testinh etcd
 create network
 <img width="567" alt="{2333268B-8B21-478D-AEE0-D2A40E2301E8}" src="https://github.com/user-attachments/assets/2afafd9f-7d9f-4b47-8422-5cd4394e817b" />
 
+docker deploy
+<img width="773" alt="{CEFE4B40-8DF5-4322-A34E-5B378F41A515}" src="https://github.com/user-attachments/assets/af9d1d9b-3774-4ac6-93ea-77072ee7d77f" />
+
+
 
 
