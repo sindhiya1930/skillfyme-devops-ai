@@ -41,7 +41,7 @@ func main() {
 		if err != nil {
 			defer resp.Body.Close()
 			body, _ := io.ReadAll(resp.Body)
-			log.Printf("SUCCESS: Response from %s (%d): %s", targetB, resp.StatusCode, string(body))
+			log.Printf("SUCCESS!: Response from %s (%d): %s", targetB, resp.StatusCode, string(body))
 		} else {
 
 			log.Printf("ERROR: Could not reach %s: %v", targetB, err)
