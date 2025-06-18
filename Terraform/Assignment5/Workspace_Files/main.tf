@@ -10,9 +10,6 @@ terraform {
 
   cloud {
     organization = "Skillfyme"
-    workspaces {
-      name = "assignment5-${terraform.workspace}" # Uses the environment_tag variable to name TFC workspaces
-    }
   }
 }
 
