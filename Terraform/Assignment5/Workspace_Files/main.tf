@@ -11,7 +11,7 @@ terraform {
   cloud {
     organization = "Skillfyme"
     workspaces {
-      tags = ["assignment5"]
+      name = "assignment5-dev"
     }
   }
 }
