@@ -19,7 +19,7 @@ provider "aws" {
 }
 
 # --- Resources to be deployed ---
-resource "aws_instance" "web" { {
+resource "aws_instance" "web" {
   ami           = var.ami_id # Using the ami_id variable
   instance_type = var.instance_type
 
