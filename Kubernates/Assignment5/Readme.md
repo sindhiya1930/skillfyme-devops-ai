@@ -18,6 +18,7 @@ Contains the Deployment, Service in a single file
 ### 3. Deploy the POD Autoscalar
 Deploy HPA with min pods: 3, max pods: 10, and Threshold Percentage:50%
 > kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+
 <img width="925" alt="image" src="https://github.com/user-attachments/assets/06aa5b2c-5ac4-41a2-b783-e8b82fa8a690" />
 
 ### 4. HPA deployment Verification
