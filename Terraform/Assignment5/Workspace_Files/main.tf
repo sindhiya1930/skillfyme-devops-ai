@@ -19,11 +19,11 @@ provider "aws" {
 }
 
 # --- Resources to be deployed ---
-resource "aws_instance" "app_server" {
+resource "aws_instance" "web" { {
   ami           = var.ami_id # Using the ami_id variable
   instance_type = var.instance_type
 
-  tags = merge(local.common_tags, {
+  tags ={
     Name = "${var.environment_tag}-app-server"
-  })
+  }
 }
