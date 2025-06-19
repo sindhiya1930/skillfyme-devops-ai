@@ -16,8 +16,6 @@ terraform {
 }
 provider "aws" {
         region = var.aws_region
-        access_key = "AKIATTR7I4EEAG4Y7WWO" # BAD PRACTICE!
-        secret_key = "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"
 }
 
 # --- Resources to be deployed ---
