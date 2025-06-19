@@ -3,7 +3,7 @@
 variable "aws_region" {
   description = "The AWS region to deploy resources into."
   type        = string
-  default     = "ap-south-1" # Default to Chennai (Mumbai region in AWS)
+  default     = "us-wast-1" # Default to Chennai (Mumbai region in AWS)
 }
 
 variable "environment_tag" {
