@@ -75,24 +75,21 @@ Since the Jenkins container is mounted with /var/run/docker.sock, it can leverag
 
 > Verify AWS CLI installation
 > aws --version
-
 > Install kubectl
 > curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 > sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-
 > Verify kubectl installation
 > kubectl version --client
-
 > Install eksctl (recommended for EKS cluster management, though kubectl can be enough for simple deployments)
 > For EKS cluster creation, use eksctl. For deployment, kubectl is sufficient.
 > You might want to create your EKS cluster beforehand using eksctl or AWS Console.
 > curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 > sudo mv /tmp/eksctl /usr/local/bin
 > eksctl version
-
 > Configure AWS CLI with your credentials (on the host machine)
 > These are the credentials the host's Docker daemon uses, which Jenkins can then leverage via its socket mount.
 > This setup is critical for 'aws eks update-kubeconfig' to work inside the pipeline.
 > aws configure
 > Enter your AWS Access Key ID, Secret Access Key, default region, and default output format.
 
+## 3. Create Jenkins Pipeline (Jenkinsfile)
