@@ -93,3 +93,15 @@ Since the Jenkins container is mounted with /var/run/docker.sock, it can leverag
 > Enter your AWS Access Key ID, Secret Access Key, default region, and default output format.
 
 ## 3. Create Jenkins Pipeline (Jenkinsfile)
+Now, let's create a new Jenkins Pipeline project and paste the following Groovy script as the Jenkinsfile.
+> In Jenkins UI, go to Dashboard -> New Item.
+
+* Enter an item name (e.g., python-webapp-cicd).
+
+* Select Pipeline and click OK.
+
+* In the configuration page, scroll down to the Pipeline section.
+
+* Select Pipeline script under Definition.
+
+* Copy and paste the following script into the Script textbox.
