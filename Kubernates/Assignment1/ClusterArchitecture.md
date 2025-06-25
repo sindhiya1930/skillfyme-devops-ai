@@ -13,7 +13,7 @@ The Control Plane is the brain of the Kubernetes cluster. It manages and orchest
 
 #### Key Components of the Control Plane:
 
-* kube-apiserver:
+* **kube-apiserver:**
 
 Acts as the frontend for the Kubernetes control plane.
 
@@ -21,7 +21,7 @@ Exposes the Kubernetes API, which is used by all other components and external u
 
 Validates and configures data for API objects like pods, services, and deployments.
 
-* etcd:
+* **etcd:**
 
 A highly available, distributed, and consistent key-value store.
 
@@ -29,13 +29,13 @@ Stores all cluster data, including configuration data, state, and metadata of al
 
 Crucial for the cluster's health and operation.
 
-* kube-scheduler:
+* **kube-scheduler:**
 
 Watches for newly created pods with no assigned node.
 
 Selects the optimal node for the pod to run on, considering factors like resource requirements, hardware constraints, policy constraints, and affinity/anti-affinity specifications.
 
-* kube-controller-manager:
+* **kube-controller-manager:**
 
 Runs various controller processes that regulate the state of the cluster.
 
@@ -54,9 +54,9 @@ Each controller is a separate process, but they are compiled into a single binar
 ### II. Worker Nodes (Minion Nodes)
 Worker nodes are the machines (VMs or physical servers) where the actual containerized applications (Pods) run. Each worker node has the necessary components to run and communicate with the Control Plane.
 
-Key Components of Worker Nodes:
+#### Key Components of Worker Nodes:
 
-* Kubelet:
+* **Kubelet:**
 
 An agent that runs on each node in the cluster.
 
@@ -66,7 +66,7 @@ Receives Pod specifications from the API server and ensures that the described c
 
 Reports the health and status of the node and its pods to the Control Plane.
 
-* Kube-proxy:
+* **Kube-proxy:**
 
 A network proxy that runs on each node.
 
@@ -80,7 +80,7 @@ The software responsible for running containers.
 
 Kubernetes supports various container runtimes that implement the Container Runtime Interface (CRI). Docker was traditionally popular, but containerd and CRI-O are also widely used.
 
-* Pods:
+* **Pods:**
 
 The smallest deployable units of computing that can be created and managed in Kubernetes.
 
