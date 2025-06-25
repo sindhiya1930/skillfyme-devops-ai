@@ -105,3 +105,11 @@ Now, let's create a new Jenkins Pipeline project and paste the following Groovy 
 * Select Pipeline script under Definition.
 
 * Copy and paste the following script into the Script textbox.
+
+## 4. Run the jenkins
+## 5. Deployment check
+docker hub image 
+![image](https://github.com/user-attachments/assets/375c7905-82eb-4e0d-b0f7-a2c28bfa38e8)
+kubernates deployment
+![image](https://github.com/user-attachments/assets/e542238a-970c-4ce4-8f5c-1e780f6251c1)
+
