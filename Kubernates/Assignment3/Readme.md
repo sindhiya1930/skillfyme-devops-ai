@@ -23,12 +23,15 @@ This guide outlines the process of implementing a Blue-Green deployment strategy
    
 #### d. Check the curent service : Blue deployment should be done
    Accessing of Nodeport-external-ip:port -> in nodes security group allow the port inbound rule
+   
    <img width="577" alt="image" src="https://github.com/user-attachments/assets/f04e3491-ad5b-4487-a1cf-c8b78939b514" />
    
 ### 2) Traffic Management
 #### a. Switch the service to green env
 Once testing of the Green environment is complete, you'll update the selector of your payment-gateway-service to point to the Green environment.
+
    <img width="291" alt="image" src="https://github.com/user-attachments/assets/99627bb2-6a23-4920-8ce1-e96379cb99ae" />
+   
    <img width="506" alt="{CBFD1F04-48F3-46A4-87BC-99B0FC68DA9B}" src="https://github.com/user-attachments/assets/979b0c21-e3c0-4da9-a2bc-e6429434db2b" />
 
 #### b.Now test the service : Green deployment should be done
