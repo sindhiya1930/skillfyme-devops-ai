@@ -106,10 +106,20 @@ Now, let's create a new Jenkins Pipeline project and paste the following Groovy 
 
 * Copy and paste the following script into the Script textbox.
 
-## 4. Run the jenkins
+## 4. Run the jenkins Job
+### 4.1 Trigger Jenkins Job
+Trigger the Jenkins job manually by selecting the job and Clicking Build Button
+![image](https://github.com/user-attachments/assets/4147adf4-7a24-4dc6-a879-1e9621660cd3)
+
+### 4.1 Stages of the job
+![image](https://github.com/user-attachments/assets/15a150c1-2683-4372-9a83-9280b4832121)
+> To Check console output: Job -> BuildId -> ConsoleOutput
+
 ## 5. Deployment check
 docker hub image 
 ![image](https://github.com/user-attachments/assets/375c7905-82eb-4e0d-b0f7-a2c28bfa38e8)
 kubernates deployment
+![image](https://github.com/user-attachments/assets/2f298fca-962d-47fe-a8f2-06d56b7d1b0c)
+
 ![image](https://github.com/user-attachments/assets/e542238a-970c-4ce4-8f5c-1e780f6251c1)
 
