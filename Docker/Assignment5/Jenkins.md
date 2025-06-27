@@ -106,6 +106,10 @@ Now, let's create a new Jenkins Pipeline project and paste the following Groovy 
 
 * Copy and paste the following script into the Script textbox.
 
+
+![image](https://github.com/user-attachments/assets/d3ff06aa-8551-4106-aac9-ee9d41306e82)
+
+
 ## 4. Run the jenkins Job
 ### 4.1 Trigger Jenkins Job
 Trigger the Jenkins job manually by selecting the job and Clicking Build Button
